@@ -1,0 +1,33 @@
+.header{
+    background-color: var(--blue);
+    width: 100%;
+    min-height: 5em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: var(--white);
+}
+
+.home{
+    font-size: 1.3em;
+}
+
+.button{
+    height: 2em;
+    margin: 0.7em;
+    padding: 1em;
+    font-weight:bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--blue);
+}
+
+.active{
+    border-bottom: 1px solid var(--white);
+}
+
+.button:hover {
+    cursor: pointer;
+    border: 1px solid var(--white);
+}

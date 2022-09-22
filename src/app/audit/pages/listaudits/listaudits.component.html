@@ -1,0 +1,21 @@
+<div *ngIf="data.length === 0 ; else showInfo" class="content void"> 
+    There is not registers to show, please create one.
+</div>
+<ng-template #showInfo>
+    <div class="content animate__animated animate__fadeIn animate__faster">
+        <div class="card" *ngFor="let audit of data">
+            <div class="headercard">
+                <span class="alias">{{audit.url | titlecase}}</span>
+            </div>
+            <div class="info">
+                <span class="name">
+                    {{audit.date}} - {{audit.method}} - {{ audit.response | json }}
+                </span>
+            </div>
+            <div class="buttons">
+                <button class="button-edit" [routerLink]="['edit', audit._id]">Edit</button>
+                <button class="button-elim" (click)="deleteAudit(audit._id!)">Delete</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

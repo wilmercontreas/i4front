@@ -1,0 +1,17 @@
+<div *ngIf="data.length === 0 ; else showInfo" class="content void"> 
+    There is not registers to show, please create one.
+</div>
+<ng-template #showInfo>
+    <div class="content animate__animated animate__fadeIn animate__faster">
+        <div class="card" *ngFor="let user of data">
+            <div class="headercard">
+                <span class="alias">{{user.name | titlecase}}</span>
+            </div>
+            <div class="info">
+                <span class="name">
+                    {{user.email}} - {{user.username}} - {{user.phone}} - {{user.website}}
+                </span>
+            </div>
+        </div>
+    </div>
+</ng-template>
